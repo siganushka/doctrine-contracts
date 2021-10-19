@@ -1,0 +1,33 @@
+{
+    "name": "siganushka/doctrine-contracts",
+    "description": "A set of abstractions for doctrine.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "siganushka",
+            "email": "siganushka@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.2.5",
+        "doctrine/orm": "^2.10"
+    },
+    "require-dev": {
+        "symfony/phpunit-bridge": "^5.3",
+        "friendsofphp/php-cs-fixer": "^3.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Siganushka\\Contracts\\Doctrine\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Siganushka\\Contracts\\Doctrine\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
