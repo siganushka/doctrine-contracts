@@ -6,10 +6,10 @@ namespace Siganushka\Contracts\Doctrine\Tests\EventListener;
 
 use Doctrine\ORM\Event\LoadClassMetadataEventArgs;
 use Doctrine\ORM\Mapping\ClassMetadata;
-use Doctrine\ORM\Mapping\Entity;
 use Doctrine\ORM\Mapping\UnderscoreNamingStrategy;
 use PHPUnit\Framework\TestCase;
 use Siganushka\Contracts\Doctrine\EventListener\TablePrefixListener;
+use Siganushka\Contracts\Doctrine\Tests\Fixtures\FooResource;
 
 /**
  * @internal
@@ -21,10 +21,10 @@ final class TablePrefixListenerTest extends TestCase
     {
         $namingStrategy = new UnderscoreNamingStrategy(\CASE_LOWER, true);
 
-        $reflection = new \ReflectionClass(Foo::class);
+        $reflection = new \ReflectionClass(FooResource::class);
 
-        $classMetadata = new ClassMetadata(Foo::class, $namingStrategy);
-        $classMetadata->table['name'] = $namingStrategy->classToTableName(Foo::class);
+        $classMetadata = new ClassMetadata(FooResource::class, $namingStrategy);
+        $classMetadata->table['name'] = $namingStrategy->classToTableName(FooResource::class);
         $classMetadata->reflClass = $reflection;
         $classMetadata->namespace = $reflection->getNamespaceName();
 
@@ -48,14 +48,7 @@ final class TablePrefixListenerTest extends TestCase
         $listener = new TablePrefixListener('app_');
         $listener->loadClassMetadata($loadClassMetadataEventArgs);
 
-        static::assertSame('app_foo', $classMetadata->getTableName());
-        static::assertSame('app_foo_bar', $classMetadata->associationMappings['bars']['joinTable']['name']);
+        static::assertSame('app_foo_resource', $classMetadata->getTableName());
+        static::assertSame('app_foo_resource_bar', $classMetadata->associationMappings['bars']['joinTable']['name']);
     }
-}
-
-/**
- * @Entity
- */
-class Foo
-{
 }

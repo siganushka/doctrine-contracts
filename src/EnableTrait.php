@@ -16,9 +16,9 @@ trait EnableTrait
      */
     private $enabled;
 
-    public function isEnabled(): ?bool
+    public function isEnabled(): bool
     {
-        return $this->enabled;
+        return (bool) $this->enabled;
     }
 
     public function setEnabled(?bool $enabled)

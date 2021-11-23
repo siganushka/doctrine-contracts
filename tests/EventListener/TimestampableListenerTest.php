@@ -8,8 +8,8 @@ use Doctrine\Persistence\Event\LifecycleEventArgs;
 use Doctrine\Persistence\ObjectManager;
 use PHPUnit\Framework\TestCase;
 use Siganushka\Contracts\Doctrine\EventListener\TimestampableListener;
+use Siganushka\Contracts\Doctrine\Tests\Fixtures\FooTimestampable;
 use Siganushka\Contracts\Doctrine\TimestampableInterface;
-use Siganushka\Contracts\Doctrine\TimestampableTrait;
 
 /**
  * @internal
@@ -34,7 +34,7 @@ final class TimestampableListenerTest extends TestCase
 
     public function testPrePersist(): void
     {
-        $foo = new TimestampableFoo();
+        $foo = new FooTimestampable();
 
         static::assertInstanceOf(TimestampableInterface::class, $foo);
         static::assertNull($foo->getCreatedAt());
@@ -47,7 +47,7 @@ final class TimestampableListenerTest extends TestCase
 
     public function testPreUpdate(): void
     {
-        $foo = new TimestampableFoo();
+        $foo = new FooTimestampable();
 
         static::assertInstanceOf(TimestampableInterface::class, $foo);
         static::assertNull($foo->getUpdatedAt());
@@ -57,9 +57,4 @@ final class TimestampableListenerTest extends TestCase
 
         static::assertInstanceOf(\DateTimeInterface::class, $foo->getUpdatedAt());
     }
-}
-
-class TimestampableFoo implements TimestampableInterface
-{
-    use TimestampableTrait;
 }

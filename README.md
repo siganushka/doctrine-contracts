@@ -8,9 +8,7 @@ A set of abstractions for doctrine.
 $ composer require siganushka/doctrine-contracts
 ```
 
-### Usage
-
-List of interfaces.
+### Interfaces
 
 ```
 Siganushka\Contracts\Doctrine\ResourceInterface

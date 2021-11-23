@@ -9,7 +9,7 @@ use Doctrine\Persistence\ObjectManager;
 use PHPUnit\Framework\TestCase;
 use Siganushka\Contracts\Doctrine\EventListener\SortableListener;
 use Siganushka\Contracts\Doctrine\SortableInterface;
-use Siganushka\Contracts\Doctrine\SortableTrait;
+use Siganushka\Contracts\Doctrine\Tests\Fixtures\FooSortable;
 
 /**
  * @internal
@@ -34,7 +34,7 @@ final class SortableListenerTest extends TestCase
 
     public function testPrePersist(): void
     {
-        $foo = new SortableFoo();
+        $foo = new FooSortable();
 
         static::assertInstanceOf(SortableInterface::class, $foo);
         static::assertNull($foo->getSorted());
@@ -42,7 +42,7 @@ final class SortableListenerTest extends TestCase
         $lifecycleEventArgs = new LifecycleEventArgs($foo, $this->objectManager);
         $this->listener->prePersist($lifecycleEventArgs);
 
-        static::assertSame(SortableFoo::DEFAULT_SORTED, $foo->getSorted());
+        static::assertSame(SortableInterface::DEFAULT_SORTED, $foo->getSorted());
 
         // set value if not set
         $foo->setSorted(128);
@@ -53,7 +53,7 @@ final class SortableListenerTest extends TestCase
 
     public function testPreUpdate(): void
     {
-        $foo = new SortableFoo();
+        $foo = new FooSortable();
 
         static::assertInstanceOf(SortableInterface::class, $foo);
         static::assertNull($foo->getSorted());
@@ -61,7 +61,7 @@ final class SortableListenerTest extends TestCase
         $lifecycleEventArgs = new LifecycleEventArgs($foo, $this->objectManager);
         $this->listener->preUpdate($lifecycleEventArgs);
 
-        static::assertSame(SortableFoo::DEFAULT_SORTED, $foo->getSorted());
+        static::assertSame(SortableInterface::DEFAULT_SORTED, $foo->getSorted());
 
         // set value if not set
         $foo->setSorted(128);
@@ -69,9 +69,4 @@ final class SortableListenerTest extends TestCase
 
         static::assertSame(128, $foo->getSorted());
     }
-}
-
-class SortableFoo implements SortableInterface
-{
-    use SortableTrait;
 }
