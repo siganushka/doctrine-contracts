@@ -2,13 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Siganushka\Contracts\Doctrine\Tests\EventSubscriber;
+namespace Siganushka\Contracts\Doctrine\Tests\EventListener;
 
-use Doctrine\ORM\EntityManagerInterface;
-use Doctrine\ORM\Event\LifecycleEventArgs;
-use Doctrine\ORM\Event\PreUpdateEventArgs;
+use Doctrine\Persistence\Event\LifecycleEventArgs;
+use Doctrine\Persistence\ObjectManager;
 use PHPUnit\Framework\TestCase;
-use Siganushka\Contracts\Doctrine\EventSubscriber\TimestampableSubscriber;
+use Siganushka\Contracts\Doctrine\EventListener\TimestampableListener;
 use Siganushka\Contracts\Doctrine\TimestampableInterface;
 use Siganushka\Contracts\Doctrine\TimestampableTrait;
 
@@ -16,20 +15,20 @@ use Siganushka\Contracts\Doctrine\TimestampableTrait;
  * @internal
  * @coversNothing
  */
-final class TimestampableSubscriberTest extends TestCase
+final class TimestampableListenerTest extends TestCase
 {
-    private $entityManager;
+    private $objectManager;
     private $listener;
 
     protected function setUp(): void
     {
-        $this->entityManager = $this->createMock(EntityManagerInterface::class);
-        $this->listener = new TimestampableSubscriber();
+        $this->objectManager = $this->createMock(ObjectManager::class);
+        $this->listener = new TimestampableListener();
     }
 
     protected function tearDown(): void
     {
-        $this->entityManager = null;
+        $this->objectManager = null;
         $this->listener = null;
     }
 
@@ -40,7 +39,7 @@ final class TimestampableSubscriberTest extends TestCase
         static::assertInstanceOf(TimestampableInterface::class, $foo);
         static::assertNull($foo->getCreatedAt());
 
-        $lifecycleEventArgs = new LifecycleEventArgs($foo, $this->entityManager);
+        $lifecycleEventArgs = new LifecycleEventArgs($foo, $this->objectManager);
         $this->listener->prePersist($lifecycleEventArgs);
 
         static::assertInstanceOf(\DateTimeImmutable::class, $foo->getCreatedAt());
@@ -53,9 +52,8 @@ final class TimestampableSubscriberTest extends TestCase
         static::assertInstanceOf(TimestampableInterface::class, $foo);
         static::assertNull($foo->getUpdatedAt());
 
-        $changeSet = [];
-        $preUpdateEventArgs = new PreUpdateEventArgs($foo, $this->entityManager, $changeSet);
-        $this->listener->preUpdate($preUpdateEventArgs);
+        $lifecycleEventArgs = new LifecycleEventArgs($foo, $this->objectManager);
+        $this->listener->preUpdate($lifecycleEventArgs);
 
         static::assertInstanceOf(\DateTimeInterface::class, $foo->getUpdatedAt());
     }

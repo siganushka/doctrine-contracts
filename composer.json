@@ -11,11 +11,10 @@
     ],
     "require": {
         "php": ">=7.2.5",
-        "doctrine/orm": "^2.10"
+        "doctrine/orm": "^2.8"
     },
     "require-dev": {
-        "symfony/phpunit-bridge": "^5.3",
-        "friendsofphp/php-cs-fixer": "^3.2"
+        "symfony/phpunit-bridge": "^5.2"
     },
     "autoload": {
         "psr-4": {
