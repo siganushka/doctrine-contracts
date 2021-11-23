@@ -22,13 +22,4 @@ trait ResourceTrait
     {
         return $this->id;
     }
-
-    public function equals(?ResourceInterface $target): bool
-    {
-        if (null === $target) {
-            return false;
-        }
-
-        return $this->id === $target->getId();
-    }
 }

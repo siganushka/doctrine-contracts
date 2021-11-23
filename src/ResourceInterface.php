@@ -7,6 +7,4 @@ namespace Siganushka\Contracts\Doctrine;
 interface ResourceInterface
 {
     public function getId(): ?int;
-
-    public function equals(?self $target): bool;
 }
