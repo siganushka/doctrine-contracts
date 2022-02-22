@@ -10,7 +10,7 @@
         }
     ],
     "require": {
-        "php": ">=4",
+        "php": ">=7.4",
         "doctrine/orm": "^2.8"
     },
     "require-dev": {
