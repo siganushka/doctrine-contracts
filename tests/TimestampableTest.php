@@ -10,7 +10,7 @@ use Siganushka\Contracts\Doctrine\TimestampableInterface;
 
 class TimestampableTest extends TestCase
 {
-    public function testAll()
+    public function testAll(): void
     {
         $entity = new FooTimestampable();
         static::assertInstanceOf(TimestampableInterface::class, $entity);

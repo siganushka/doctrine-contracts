@@ -10,7 +10,7 @@ use Siganushka\Contracts\Doctrine\Tests\Fixtures\FooResource;
 
 class ResourceTest extends TestCase
 {
-    public function testAll()
+    public function testAll(): void
     {
         $entity = new FooResource();
         static::assertInstanceOf(ResourceInterface::class, $entity);

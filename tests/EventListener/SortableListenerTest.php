@@ -17,8 +17,8 @@ use Siganushka\Contracts\Doctrine\Tests\Fixtures\FooSortable;
  */
 final class SortableListenerTest extends TestCase
 {
-    private $objectManager;
-    private $listener;
+    private ?ObjectManager $objectManager = null;
+    private ?SortableListener $listener = null;
 
     protected function setUp(): void
     {

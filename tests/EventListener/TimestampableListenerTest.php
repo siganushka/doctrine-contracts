@@ -17,8 +17,8 @@ use Siganushka\Contracts\Doctrine\TimestampableInterface;
  */
 final class TimestampableListenerTest extends TestCase
 {
-    private $objectManager;
-    private $listener;
+    private ?ObjectManager $objectManager = null;
+    private ?TimestampableListener $listener = null;
 
     protected function setUp(): void
     {

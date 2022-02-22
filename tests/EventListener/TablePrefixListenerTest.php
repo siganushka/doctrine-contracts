@@ -27,11 +27,8 @@ final class TablePrefixListenerTest extends TestCase
         $classMetadata->table['name'] = $namingStrategy->classToTableName(FooResource::class);
         $classMetadata->reflClass = $reflection;
         $classMetadata->namespace = $reflection->getNamespaceName();
-
-        if ($reflection) {
-            $classMetadata->name = $reflection->getName();
-            $classMetadata->rootEntityName = $reflection->getName();
-        }
+        $classMetadata->name = $reflection->getName();
+        $classMetadata->rootEntityName = $reflection->getName();
 
         $classMetadata->mapManyToMany([
             'fieldName' => 'bars',

@@ -10,7 +10,7 @@ use Siganushka\Contracts\Doctrine\Tests\Fixtures\FooSortable;
 
 class SortableTest extends TestCase
 {
-    public function testAll()
+    public function testAll(): void
     {
         $entity = new FooSortable();
         static::assertInstanceOf(SortableInterface::class, $entity);

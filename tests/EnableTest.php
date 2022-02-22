@@ -10,7 +10,7 @@ use Siganushka\Contracts\Doctrine\Tests\Fixtures\FooEnable;
 
 class EnableTest extends TestCase
 {
-    public function testAll()
+    public function testAll(): void
     {
         $entity = new FooEnable();
         static::assertInstanceOf(EnableInterface::class, $entity);

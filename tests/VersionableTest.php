@@ -10,7 +10,7 @@ use Siganushka\Contracts\Doctrine\VersionableInterface;
 
 class VersionableTest extends TestCase
 {
-    public function testAll()
+    public function testAll(): void
     {
         $entity = new FooVersionable();
         static::assertInstanceOf(VersionableInterface::class, $entity);
