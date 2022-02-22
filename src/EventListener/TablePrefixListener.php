@@ -9,7 +9,7 @@ use Doctrine\ORM\Mapping\ClassMetadataInfo;
 
 class TablePrefixListener
 {
-    private $prefix;
+    private string $prefix;
 
     public function __construct(string $prefix)
     {

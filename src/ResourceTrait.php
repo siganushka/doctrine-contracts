@@ -16,7 +16,7 @@ trait ResourceTrait
      *
      * @Groups({"trait_resource"})
      */
-    private $id;
+    private ?int $id = null;
 
     public function getId(): ?int
     {

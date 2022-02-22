@@ -15,14 +15,14 @@ trait VersionableTrait
      *
      * @Groups({"trait_versionable"})
      */
-    private $version;
+    private ?int $version = null;
 
     public function getVersion(): ?int
     {
         return $this->version;
     }
 
-    public function setVersion(?int $version)
+    public function setVersion(?int $version): self
     {
         $this->version = $version;
 

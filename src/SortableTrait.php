@@ -14,14 +14,14 @@ trait SortableTrait
      *
      * @Groups({"trait_sortable"})
      */
-    private $sorted;
+    private ?int $sorted = null;
 
     public function getSorted(): ?int
     {
         return $this->sorted;
     }
 
-    public function setSorted(?int $sorted)
+    public function setSorted(?int $sorted): self
     {
         $this->sorted = $sorted;
 

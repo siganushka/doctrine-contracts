@@ -14,21 +14,21 @@ trait TimestampableTrait
      *
      * @Groups({"trait_timestampable"})
      */
-    private $updatedAt;
+    private ?\DateTimeInterface $updatedAt = null;
 
     /**
      * @ORM\Column(type="datetime_immutable")
      *
      * @Groups({"trait_timestampable"})
      */
-    private $createdAt;
+    private ?\DateTimeImmutable $createdAt = null;
 
     public function getUpdatedAt(): ?\DateTimeInterface
     {
         return $this->updatedAt;
     }
 
-    public function setUpdatedAt(?\DateTimeInterface $updatedAt)
+    public function setUpdatedAt(?\DateTimeInterface $updatedAt): self
     {
         $this->updatedAt = $updatedAt;
 
@@ -40,7 +40,7 @@ trait TimestampableTrait
         return $this->createdAt;
     }
 
-    public function setCreatedAt(?\DateTimeImmutable $createdAt)
+    public function setCreatedAt(?\DateTimeImmutable $createdAt): self
     {
         $this->createdAt = $createdAt;
 

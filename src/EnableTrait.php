@@ -14,14 +14,14 @@ trait EnableTrait
      *
      * @Groups({"trait_enable"})
      */
-    private $enabled;
+    private ?bool $enabled = null;
 
     public function isEnabled(): bool
     {
         return (bool) $this->enabled;
     }
 
-    public function setEnabled(?bool $enabled)
+    public function setEnabled(?bool $enabled): self
     {
         $this->enabled = $enabled;
 
