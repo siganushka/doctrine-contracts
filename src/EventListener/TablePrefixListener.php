@@ -27,6 +27,9 @@ class TablePrefixListener
             ]);
         }
 
+        /**
+         * @var array{ type: int, isOwningSide: bool, joinTable: array{ name: string } } $mapping
+         */
         foreach ($classMetadata->getAssociationMappings() as $fieldName => $mapping) {
             if (ClassMetadataInfo::MANY_TO_MANY === $mapping['type'] && $mapping['isOwningSide']) {
                 $mappedTableName = $this->prefix.$mapping['joinTable']['name'];
