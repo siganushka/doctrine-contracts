@@ -5,7 +5,7 @@ A set of abstractions for doctrine.
 ### Installation
 
 ```bash
-$ composer require siganushka/doctrine-contracts:dev-main
+$ composer require siganushka/doctrine-contracts
 ```
 
 ### Interfaces & Traits
