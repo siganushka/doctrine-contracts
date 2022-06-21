@@ -18,8 +18,10 @@ class TablePrefixListener
 
     public function loadClassMetadata(LoadClassMetadataEventArgs $event): void
     {
+        /**
+         * @var ClassMetadataInfo
+         */
         $classMetadata = $event->getClassMetadata();
-
         if (!$classMetadata->isInheritanceTypeSingleTable()
             || $classMetadata->getName() === $classMetadata->rootEntityName) {
             $classMetadata->setPrimaryTable([
@@ -32,8 +34,7 @@ class TablePrefixListener
          */
         foreach ($classMetadata->getAssociationMappings() as $fieldName => $mapping) {
             if (ClassMetadataInfo::MANY_TO_MANY === $mapping['type'] && $mapping['isOwningSide']) {
-                $mappedTableName = $this->prefix.$mapping['joinTable']['name'];
-                $classMetadata->associationMappings[$fieldName]['joinTable']['name'] = $mappedTableName;
+                $classMetadata->associationMappings[$fieldName]['joinTable']['name'] = $this->prefix.$mapping['joinTable']['name'];
             }
         }
     }

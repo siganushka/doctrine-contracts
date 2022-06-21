@@ -12,20 +12,16 @@ class TimestampableListener
     public function prePersist(LifecycleEventArgs $event): void
     {
         $object = $event->getObject();
-        if (!$object instanceof TimestampableInterface) {
-            return;
+        if ($object instanceof TimestampableInterface) {
+            $object->setCreatedAt(new \DateTimeImmutable());
         }
-
-        $object->setCreatedAt(new \DateTimeImmutable());
     }
 
     public function preUpdate(LifecycleEventArgs $event): void
     {
         $object = $event->getObject();
-        if (!$object instanceof TimestampableInterface) {
-            return;
+        if ($object instanceof TimestampableInterface) {
+            $object->setUpdatedAt(new \DateTime());
         }
-
-        $object->setUpdatedAt(new \DateTime());
     }
 }

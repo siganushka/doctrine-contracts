@@ -12,21 +12,17 @@ class SortableListener
     public function prePersist(LifecycleEventArgs $event): void
     {
         $object = $event->getObject();
-        if (!$object instanceof SortableInterface) {
-            return;
+        if ($object instanceof SortableInterface) {
+            $this->setSortedIfNotSet($object);
         }
-
-        $this->setSortedIfNotSet($object);
     }
 
     public function preUpdate(LifecycleEventArgs $event): void
     {
         $object = $event->getObject();
-        if (!$object instanceof SortableInterface) {
-            return;
+        if ($object instanceof SortableInterface) {
+            $this->setSortedIfNotSet($object);
         }
-
-        $this->setSortedIfNotSet($object);
     }
 
     private function setSortedIfNotSet(SortableInterface $object): void

@@ -9,7 +9,7 @@ use Doctrine\ORM\Mapping\ClassMetadata;
 use Doctrine\ORM\Mapping\UnderscoreNamingStrategy;
 use PHPUnit\Framework\TestCase;
 use Siganushka\Contracts\Doctrine\EventListener\TablePrefixListener;
-use Siganushka\Contracts\Doctrine\Tests\Fixtures\FooResource;
+use Siganushka\Contracts\Doctrine\Tests\Mock\FooResource;
 
 /**
  * @internal
@@ -36,7 +36,6 @@ final class TablePrefixListenerTest extends TestCase
         ]);
 
         $loadClassMetadataEventArgs = $this->createMock(LoadClassMetadataEventArgs::class);
-
         $loadClassMetadataEventArgs->expects(static::any())
             ->method('getClassMetadata')
             ->willReturn($classMetadata)

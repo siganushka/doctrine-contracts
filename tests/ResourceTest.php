@@ -6,7 +6,7 @@ namespace Siganushka\Contracts\Doctrine\Tests;
 
 use PHPUnit\Framework\TestCase;
 use Siganushka\Contracts\Doctrine\ResourceInterface;
-use Siganushka\Contracts\Doctrine\Tests\Fixtures\FooResource;
+use Siganushka\Contracts\Doctrine\Tests\Mock\FooResource;
 
 class ResourceTest extends TestCase
 {

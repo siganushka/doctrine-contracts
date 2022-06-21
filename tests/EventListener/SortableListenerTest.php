@@ -9,7 +9,7 @@ use Doctrine\Persistence\ObjectManager;
 use PHPUnit\Framework\TestCase;
 use Siganushka\Contracts\Doctrine\EventListener\SortableListener;
 use Siganushka\Contracts\Doctrine\SortableInterface;
-use Siganushka\Contracts\Doctrine\Tests\Fixtures\FooSortable;
+use Siganushka\Contracts\Doctrine\Tests\Mock\FooSortable;
 
 /**
  * @internal
