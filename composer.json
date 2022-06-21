@@ -11,7 +11,8 @@
     ],
     "require": {
         "php": ">=7.4",
-        "doctrine/orm": "^2.8"
+        "doctrine/orm": "^2.8",
+        "symfony/serializer": "^5.4|^6.0"
     },
     "require-dev": {
         "symfony/phpunit-bridge": "^5.4|^6.0"
