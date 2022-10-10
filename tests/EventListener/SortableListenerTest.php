@@ -11,10 +11,6 @@ use Siganushka\Contracts\Doctrine\EventListener\SortableListener;
 use Siganushka\Contracts\Doctrine\SortableInterface;
 use Siganushka\Contracts\Doctrine\Tests\Mock\FooSortable;
 
-/**
- * @internal
- * @coversNothing
- */
 final class SortableListenerTest extends TestCase
 {
     private ?ObjectManager $objectManager = null;

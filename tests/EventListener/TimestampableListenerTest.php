@@ -11,10 +11,6 @@ use Siganushka\Contracts\Doctrine\EventListener\TimestampableListener;
 use Siganushka\Contracts\Doctrine\Tests\Mock\FooTimestampable;
 use Siganushka\Contracts\Doctrine\TimestampableInterface;
 
-/**
- * @internal
- * @coversNothing
- */
 final class TimestampableListenerTest extends TestCase
 {
     private ?ObjectManager $objectManager = null;

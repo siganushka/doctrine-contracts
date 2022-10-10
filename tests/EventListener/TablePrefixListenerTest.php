@@ -11,10 +11,6 @@ use PHPUnit\Framework\TestCase;
 use Siganushka\Contracts\Doctrine\EventListener\TablePrefixListener;
 use Siganushka\Contracts\Doctrine\Tests\Mock\FooResource;
 
-/**
- * @internal
- * @coversNothing
- */
 final class TablePrefixListenerTest extends TestCase
 {
     public function testLoadClassMetadata(): void
