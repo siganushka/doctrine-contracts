@@ -2,26 +2,35 @@
 
 declare(strict_types=1);
 
-namespace Siganushka\Contracts\Doctrine;
+namespace Siganushka\Contracts\Doctrine\Embeddable;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
 
-trait DateTimeRangeTrait
+/**
+ * @ORM\Embeddable
+ */
+class DateTimeRange
 {
     /**
      * @ORM\Column(type="datetime")
      *
-     * @Groups({"trait_datetime_range"})
+     * @Groups({"embeddable_datetime_range"})
      */
     private ?\DateTimeInterface $beginAt = null;
 
     /**
      * @ORM\Column(type="datetime")
      *
-     * @Groups({"trait_datetime_range"})
+     * @Groups({"embeddable_datetime_range"})
      */
     private ?\DateTimeInterface $endAt = null;
+
+    public function __construct(\DateTimeInterface $beginAt = null, \DateTimeInterface $endAt = null)
+    {
+        $this->beginAt = $beginAt;
+        $this->endAt = $endAt;
+    }
 
     public function getBeginAt(): ?\DateTimeInterface
     {

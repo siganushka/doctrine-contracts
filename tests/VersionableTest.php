@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Siganushka\Contracts\Doctrine\Tests;
 
 use PHPUnit\Framework\TestCase;
-use Siganushka\Contracts\Doctrine\Tests\Mock\FooVersionable;
+use Siganushka\Contracts\Doctrine\Tests\Fixtures\FooVersionable;
 use Siganushka\Contracts\Doctrine\VersionableInterface;
 
 class VersionableTest extends TestCase

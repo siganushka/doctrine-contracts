@@ -8,7 +8,7 @@ use Doctrine\Persistence\Event\LifecycleEventArgs;
 use Doctrine\Persistence\ObjectManager;
 use PHPUnit\Framework\TestCase;
 use Siganushka\Contracts\Doctrine\EventListener\TimestampableListener;
-use Siganushka\Contracts\Doctrine\Tests\Mock\FooTimestampable;
+use Siganushka\Contracts\Doctrine\Tests\Fixtures\FooTimestampable;
 use Siganushka\Contracts\Doctrine\TimestampableInterface;
 
 final class TimestampableListenerTest extends TestCase

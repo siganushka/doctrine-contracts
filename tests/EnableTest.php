@@ -6,7 +6,7 @@ namespace Siganushka\Contracts\Doctrine\Tests;
 
 use PHPUnit\Framework\TestCase;
 use Siganushka\Contracts\Doctrine\EnableInterface;
-use Siganushka\Contracts\Doctrine\Tests\Mock\FooEnable;
+use Siganushka\Contracts\Doctrine\Tests\Fixtures\FooEnable;
 
 class EnableTest extends TestCase
 {

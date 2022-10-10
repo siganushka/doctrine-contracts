@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Siganushka\Contracts\Doctrine\Tests;
 
 use PHPUnit\Framework\TestCase;
-use Siganushka\Contracts\Doctrine\Tests\Mock\FooTimestampable;
+use Siganushka\Contracts\Doctrine\Tests\Fixtures\FooTimestampable;
 use Siganushka\Contracts\Doctrine\TimestampableInterface;
 
 class TimestampableTest extends TestCase

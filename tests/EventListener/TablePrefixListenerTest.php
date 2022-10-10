@@ -9,7 +9,7 @@ use Doctrine\ORM\Mapping\ClassMetadata;
 use Doctrine\ORM\Mapping\UnderscoreNamingStrategy;
 use PHPUnit\Framework\TestCase;
 use Siganushka\Contracts\Doctrine\EventListener\TablePrefixListener;
-use Siganushka\Contracts\Doctrine\Tests\Mock\FooResource;
+use Siganushka\Contracts\Doctrine\Tests\Fixtures\FooResource;
 
 final class TablePrefixListenerTest extends TestCase
 {

@@ -6,7 +6,7 @@ namespace Siganushka\Contracts\Doctrine\Tests;
 
 use PHPUnit\Framework\TestCase;
 use Siganushka\Contracts\Doctrine\SortableInterface;
-use Siganushka\Contracts\Doctrine\Tests\Mock\FooSortable;
+use Siganushka\Contracts\Doctrine\Tests\Fixtures\FooSortable;
 
 class SortableTest extends TestCase
 {
