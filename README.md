@@ -10,7 +10,7 @@ $ composer require siganushka/doctrine-contracts
 
 ### Interfaces & Traits
 
-```
+```php
 Siganushka\Contracts\Doctrine\ResourceInterface
 Siganushka\Contracts\Doctrine\ResourceTrait
 
@@ -25,6 +25,13 @@ Siganushka\Contracts\Doctrine\TimestampableTrait
 
 Siganushka\Contracts\Doctrine\VersionableInterface
 Siganushka\Contracts\Doctrine\VersionableTrait
+```
+
+### Embeddable
+
+```php
+Siganushka\Contracts\Doctrine\Embeddable\DateTimeRange
+Siganushka\Contracts\Doctrine\Embeddable\PublicFile
 ```
 
 ### Tests
