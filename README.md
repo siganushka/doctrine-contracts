@@ -27,13 +27,6 @@ Siganushka\Contracts\Doctrine\VersionableInterface
 Siganushka\Contracts\Doctrine\VersionableTrait
 ```
 
-### Embeddable
-
-```php
-Siganushka\Contracts\Doctrine\Embeddable\DateTimeRange
-Siganushka\Contracts\Doctrine\Embeddable\PublicFile
-```
-
 ### Tests
 
 ```bash
