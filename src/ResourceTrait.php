@@ -12,7 +12,7 @@ trait ResourceTrait
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
-     * @ORM\Column(type="integer", options={"unsigned":true})
+     * @ORM\Column(type="integer", options={"unsigned": true})
      *
      * @Groups({"trait_resource"})
      */

@@ -10,7 +10,7 @@ use Symfony\Component\Serializer\Annotation\Groups;
 trait VersionableTrait
 {
     /**
-     * @ORM\Column(type="integer", options={"unsigned":true})
+     * @ORM\Column(type="integer", options={"unsigned": true})
      * @ORM\Version()
      *
      * @Groups({"trait_versionable"})
