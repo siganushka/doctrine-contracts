@@ -13,6 +13,9 @@ use Siganushka\Contracts\Doctrine\Tests\Fixtures\FooResource;
 
 final class TablePrefixListenerTest extends TestCase
 {
+    /**
+     * @psalm-suppress PossiblyUndefinedArrayOffset
+     */
     public function testLoadClassMetadata(): void
     {
         $namingStrategy = new UnderscoreNamingStrategy(\CASE_LOWER, true);

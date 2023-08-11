@@ -7,6 +7,9 @@ namespace Siganushka\Contracts\Doctrine\EventListener;
 use Doctrine\ORM\Event\LoadClassMetadataEventArgs;
 use Doctrine\ORM\Mapping\ClassMetadataInfo;
 
+/**
+ * @see https://www.doctrine-project.org/projects/doctrine-orm/en/latest/cookbook/sql-table-prefixes.html
+ */
 class TablePrefixListener
 {
     private string $prefix;
@@ -16,6 +19,9 @@ class TablePrefixListener
         $this->prefix = $prefix;
     }
 
+    /**
+     * @psalm-suppress PossiblyUndefinedArrayOffset
+     */
     public function loadClassMetadata(LoadClassMetadataEventArgs $event): void
     {
         /** @var ClassMetadataInfo */
