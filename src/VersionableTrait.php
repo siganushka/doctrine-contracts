@@ -5,15 +5,12 @@ declare(strict_types=1);
 namespace Siganushka\Contracts\Doctrine;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Serializer\Annotation\Groups;
 
 trait VersionableTrait
 {
     /**
-     * @ORM\Column(type="integer", options={"unsigned": true})
+     * @ORM\Column(type="integer")
      * @ORM\Version()
-     *
-     * @Groups({"trait_versionable"})
      */
     private ?int $version = null;
 

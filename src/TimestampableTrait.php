@@ -5,21 +5,16 @@ declare(strict_types=1);
 namespace Siganushka\Contracts\Doctrine;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Serializer\Annotation\Groups;
 
 trait TimestampableTrait
 {
     /**
      * @ORM\Column(type="datetime", nullable=true)
-     *
-     * @Groups({"trait_timestampable"})
      */
     private ?\DateTimeInterface $updatedAt = null;
 
     /**
      * @ORM\Column(type="datetime_immutable")
-     *
-     * @Groups({"trait_timestampable"})
      */
     private ?\DateTimeImmutable $createdAt = null;
 
