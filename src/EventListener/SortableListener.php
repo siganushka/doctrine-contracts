@@ -13,7 +13,7 @@ class SortableListener
     {
         $object = $event->getObject();
         if ($object instanceof SortableInterface) {
-            $this->setSortedIfNotSet($object);
+            $this->setSortIfNotSet($object);
         }
     }
 
@@ -21,14 +21,14 @@ class SortableListener
     {
         $object = $event->getObject();
         if ($object instanceof SortableInterface) {
-            $this->setSortedIfNotSet($object);
+            $this->setSortIfNotSet($object);
         }
     }
 
-    private function setSortedIfNotSet(SortableInterface $object): void
+    private function setSortIfNotSet(SortableInterface $object): void
     {
-        if (null === $object->getSorted()) {
-            $object->setSorted(SortableInterface::DEFAULT_SORTED);
+        if (null === $object->getSort()) {
+            $object->setSort(SortableInterface::DEFAULT_SORT);
         }
     }
 }

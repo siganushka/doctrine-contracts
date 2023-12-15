@@ -14,9 +14,9 @@ class SortableTest extends TestCase
     {
         $entity = new FooSortable();
         static::assertInstanceOf(SortableInterface::class, $entity);
-        static::assertNull($entity->getSorted());
+        static::assertNull($entity->getSort());
 
-        $entity->setSorted(128);
-        static::assertSame(128, $entity->getSorted());
+        $entity->setSort(128);
+        static::assertSame(128, $entity->getSort());
     }
 }
