@@ -14,7 +14,7 @@
         "doctrine/orm": "^2.8"
     },
     "require-dev": {
-        "symfony/phpunit-bridge": "^6.0",
+        "symfony/phpunit-bridge": "^6.0 | ^7.0",
         "vimeo/psalm": "^5.0"
     },
     "autoload": {
