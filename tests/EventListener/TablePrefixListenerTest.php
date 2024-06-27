@@ -13,12 +13,9 @@ use Siganushka\Contracts\Doctrine\Tests\Fixtures\FooResource;
 
 final class TablePrefixListenerTest extends TestCase
 {
-    /**
-     * @psalm-suppress PossiblyUndefinedArrayOffset
-     */
     public function testLoadClassMetadata(): void
     {
-        $namingStrategy = new UnderscoreNamingStrategy(\CASE_LOWER, true);
+        $namingStrategy = new UnderscoreNamingStrategy(\CASE_LOWER);
 
         $reflection = new \ReflectionClass(FooResource::class);
 
@@ -44,6 +41,6 @@ final class TablePrefixListenerTest extends TestCase
         $listener->loadClassMetadata($loadClassMetadataEventArgs);
 
         static::assertSame('app_foo_resource', $classMetadata->getTableName());
-        static::assertSame('app_foo_resource_bar', $classMetadata->associationMappings['bars']['joinTable']['name']);
+        static::assertSame('app_foo_resource_bar', $classMetadata->associationMappings['bars']['joinTable']->name);
     }
 }
