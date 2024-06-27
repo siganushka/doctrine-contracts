@@ -10,5 +10,5 @@ interface SortableInterface
 
     public function getSort(): ?int;
 
-    public function setSort(?int $sort): self;
+    public function setSort(?int $sort): static;
 }

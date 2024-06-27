@@ -8,5 +8,5 @@ interface VersionableInterface
 {
     public function getVersion(): ?int;
 
-    public function setVersion(?int $version): self;
+    public function setVersion(?int $version): static;
 }

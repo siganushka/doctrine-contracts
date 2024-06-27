@@ -8,9 +8,9 @@ interface TimestampableInterface
 {
     public function getUpdatedAt(): ?\DateTimeInterface;
 
-    public function setUpdatedAt(?\DateTimeInterface $updatedAt): self;
+    public function setUpdatedAt(?\DateTimeInterface $updatedAt): static;
 
     public function getCreatedAt(): ?\DateTimeImmutable;
 
-    public function setCreatedAt(?\DateTimeImmutable $createdAt): self;
+    public function setCreatedAt(?\DateTimeImmutable $createdAt): static;
 }

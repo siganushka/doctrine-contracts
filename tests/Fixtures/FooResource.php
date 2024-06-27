@@ -11,7 +11,7 @@ class FooResource implements ResourceInterface
 {
     use ResourceTrait;
 
-    public function setId(?int $id): self
+    public function setId(?int $id): static
     {
         $this->id = $id;
 

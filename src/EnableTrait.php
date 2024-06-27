@@ -4,12 +4,11 @@ declare(strict_types=1);
 
 namespace Siganushka\Contracts\Doctrine;
 
-use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 trait EnableTrait
 {
-    #[ORM\Column(type: Types::BOOLEAN)]
+    #[ORM\Column]
     private ?bool $enabled = null;
 
     public function isEnabled(): bool
@@ -17,7 +16,7 @@ trait EnableTrait
         return (bool) $this->enabled;
     }
 
-    public function setEnabled(?bool $enabled): self
+    public function setEnabled(?bool $enabled): static
     {
         $this->enabled = $enabled;
 
