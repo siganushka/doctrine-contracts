@@ -4,11 +4,12 @@ declare(strict_types=1);
 
 namespace Siganushka\Contracts\Doctrine;
 
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 trait SortableTrait
 {
-    #[ORM\Column]
+    #[ORM\Column(type: Types::INTEGER)]
     private ?int $sort = null;
 
     public function getSort(): ?int
