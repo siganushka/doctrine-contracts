@@ -13,21 +13,6 @@ use Siganushka\Contracts\Doctrine\TimestampableInterface;
 
 final class TimestampableListenerTest extends TestCase
 {
-    private ?ObjectManager $objectManager = null;
-    private ?TimestampableListener $listener = null;
-
-    protected function setUp(): void
-    {
-        $this->objectManager = $this->createMock(ObjectManager::class);
-        $this->listener = new TimestampableListener();
-    }
-
-    protected function tearDown(): void
-    {
-        $this->objectManager = null;
-        $this->listener = null;
-    }
-
     public function testPrePersist(): void
     {
         $foo = new FooTimestampable();
@@ -35,8 +20,10 @@ final class TimestampableListenerTest extends TestCase
         static::assertInstanceOf(TimestampableInterface::class, $foo);
         static::assertNull($foo->getCreatedAt());
 
-        $lifecycleEventArgs = new LifecycleEventArgs($foo, $this->objectManager);
-        $this->listener->prePersist($lifecycleEventArgs);
+        $lifecycleEventArgs = new LifecycleEventArgs($foo, $this->createMock(ObjectManager::class));
+
+        $listener = new TimestampableListener();
+        $listener->prePersist($lifecycleEventArgs);
 
         static::assertInstanceOf(\DateTimeImmutable::class, $foo->getCreatedAt());
     }
@@ -48,8 +35,10 @@ final class TimestampableListenerTest extends TestCase
         static::assertInstanceOf(TimestampableInterface::class, $foo);
         static::assertNull($foo->getUpdatedAt());
 
-        $lifecycleEventArgs = new LifecycleEventArgs($foo, $this->objectManager);
-        $this->listener->preUpdate($lifecycleEventArgs);
+        $lifecycleEventArgs = new LifecycleEventArgs($foo, $this->createMock(ObjectManager::class));
+
+        $listener = new TimestampableListener();
+        $listener->preUpdate($lifecycleEventArgs);
 
         static::assertInstanceOf(\DateTimeInterface::class, $foo->getUpdatedAt());
     }
