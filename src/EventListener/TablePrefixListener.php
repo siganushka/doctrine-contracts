@@ -12,11 +12,8 @@ use Doctrine\ORM\Mapping\ClassMetadata;
  */
 class TablePrefixListener
 {
-    private string $prefix;
-
-    public function __construct(string $prefix)
+    public function __construct(private string $prefix)
     {
-        $this->prefix = $prefix;
     }
 
     public function loadClassMetadata(LoadClassMetadataEventArgs $event): void
