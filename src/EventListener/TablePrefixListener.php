@@ -12,7 +12,7 @@ use Doctrine\ORM\Mapping\ClassMetadata;
  */
 class TablePrefixListener
 {
-    public function __construct(private string $prefix)
+    public function __construct(private readonly string $prefix)
     {
     }
 
