@@ -20,14 +20,15 @@ final class SortableListenerTest extends TestCase
         static::assertInstanceOf(SortableInterface::class, $foo);
         static::assertNull($foo->getSort());
 
-        $lifecycleEventArgs = new LifecycleEventArgs($foo, $this->createMock(ObjectManager::class));
+        /** @var ObjectManager */
+        $objectManager = $this->createMock(ObjectManager::class);
+        $lifecycleEventArgs = new LifecycleEventArgs($foo, $objectManager);
 
         $listener = new SortableListener();
         $listener->prePersist($lifecycleEventArgs);
 
         static::assertSame(SortableInterface::DEFAULT_SORT, $foo->getSort());
 
-        // set value if not set
         $foo->setSort(128);
         $listener->prePersist($lifecycleEventArgs);
 
@@ -41,7 +42,9 @@ final class SortableListenerTest extends TestCase
         static::assertInstanceOf(SortableInterface::class, $foo);
         static::assertNull($foo->getSort());
 
-        $lifecycleEventArgs = new LifecycleEventArgs($foo, $this->createMock(ObjectManager::class));
+        /** @var ObjectManager */
+        $objectManager = $this->createMock(ObjectManager::class);
+        $lifecycleEventArgs = new LifecycleEventArgs($foo, $objectManager);
 
         $listener = new SortableListener();
         $listener->preUpdate($lifecycleEventArgs);

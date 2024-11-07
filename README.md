@@ -30,5 +30,5 @@ Siganushka\Contracts\Doctrine\VersionableTrait
 ### Tests
 
 ```bash
-$ php vendor/bin/simple-phpunit --debug
+$ php tools/vendor/bin/simple-phpunit --debug
 ```

@@ -20,7 +20,9 @@ final class TimestampableListenerTest extends TestCase
         static::assertInstanceOf(TimestampableInterface::class, $foo);
         static::assertNull($foo->getCreatedAt());
 
-        $lifecycleEventArgs = new LifecycleEventArgs($foo, $this->createMock(ObjectManager::class));
+        /** @var ObjectManager */
+        $objectManager = $this->createMock(ObjectManager::class);
+        $lifecycleEventArgs = new LifecycleEventArgs($foo, $objectManager);
 
         $listener = new TimestampableListener();
         $listener->prePersist($lifecycleEventArgs);
@@ -35,7 +37,9 @@ final class TimestampableListenerTest extends TestCase
         static::assertInstanceOf(TimestampableInterface::class, $foo);
         static::assertNull($foo->getUpdatedAt());
 
-        $lifecycleEventArgs = new LifecycleEventArgs($foo, $this->createMock(ObjectManager::class));
+        /** @var ObjectManager */
+        $objectManager = $this->createMock(ObjectManager::class);
+        $lifecycleEventArgs = new LifecycleEventArgs($foo, $objectManager);
 
         $listener = new TimestampableListener();
         $listener->preUpdate($lifecycleEventArgs);
