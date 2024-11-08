@@ -15,8 +15,14 @@ class VersionableTest extends TestCase
         $entity = new FooVersionable();
         static::assertInstanceOf(VersionableInterface::class, $entity);
         static::assertNull($entity->getVersion());
+    }
 
+    public function testBadMethodCallException(): void
+    {
+        $this->expectException(\BadMethodCallException::class);
+        $this->expectExceptionMessage('The version cannot be set manually');
+
+        $entity = new FooVersionable();
         $entity->setVersion(128);
-        static::assertSame(128, $entity->getVersion());
     }
 }

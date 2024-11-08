@@ -10,11 +10,4 @@ use Siganushka\Contracts\Doctrine\ResourceTrait;
 class FooResource implements ResourceInterface
 {
     use ResourceTrait;
-
-    public function setId(?int $id): static
-    {
-        $this->id = $id;
-
-        return $this;
-    }
 }

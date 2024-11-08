@@ -14,9 +14,6 @@ class EnableTest extends TestCase
     {
         $entity = new FooEnable();
         static::assertInstanceOf(EnableInterface::class, $entity);
-        static::assertFalse($entity->isEnabled());
-
-        $entity->setEnabled(true);
         static::assertTrue($entity->isEnabled());
 
         $entity->setEnabled(false);

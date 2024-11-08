@@ -10,14 +10,14 @@ use Doctrine\ORM\Mapping as ORM;
 trait EnableTrait
 {
     #[ORM\Column(type: Types::BOOLEAN)]
-    private ?bool $enabled = null;
+    private bool $enabled = true;
 
     public function isEnabled(): bool
     {
-        return (bool) $this->enabled;
+        return $this->enabled;
     }
 
-    public function setEnabled(?bool $enabled): static
+    public function setEnabled(bool $enabled): static
     {
         $this->enabled = $enabled;
 

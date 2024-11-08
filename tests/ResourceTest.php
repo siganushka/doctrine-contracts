@@ -15,8 +15,5 @@ class ResourceTest extends TestCase
         $entity = new FooResource();
         static::assertInstanceOf(ResourceInterface::class, $entity);
         static::assertNull($entity->getId());
-
-        $entity->setId(1);
-        static::assertSame(1, $entity->getId());
     }
 }
