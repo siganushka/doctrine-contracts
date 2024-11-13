@@ -6,14 +6,18 @@ namespace Siganushka\Contracts\Doctrine\Tests;
 
 use PHPUnit\Framework\TestCase;
 use Siganushka\Contracts\Doctrine\ResourceInterface;
-use Siganushka\Contracts\Doctrine\Tests\Fixtures\FooResource;
+use Siganushka\Contracts\Doctrine\ResourceTrait;
 
 class ResourceTest extends TestCase
 {
     public function testAll(): void
     {
         $entity = new FooResource();
-        static::assertInstanceOf(ResourceInterface::class, $entity);
         static::assertNull($entity->getId());
     }
+}
+
+class FooResource implements ResourceInterface
+{
+    use ResourceTrait;
 }

@@ -5,15 +5,14 @@ declare(strict_types=1);
 namespace Siganushka\Contracts\Doctrine\Tests;
 
 use PHPUnit\Framework\TestCase;
-use Siganushka\Contracts\Doctrine\Tests\Fixtures\FooTimestampable;
 use Siganushka\Contracts\Doctrine\TimestampableInterface;
+use Siganushka\Contracts\Doctrine\TimestampableTrait;
 
 class TimestampableTest extends TestCase
 {
     public function testAll(): void
     {
         $entity = new FooTimestampable();
-        static::assertInstanceOf(TimestampableInterface::class, $entity);
         static::assertNull($entity->getUpdatedAt());
         static::assertNull($entity->getCreatedAt());
 
@@ -23,4 +22,9 @@ class TimestampableTest extends TestCase
         $entity->setCreatedAt(new \DateTimeImmutable());
         static::assertInstanceOf(\DateTimeInterface::class, $entity->getCreatedAt());
     }
+}
+
+class FooTimestampable implements TimestampableInterface
+{
+    use TimestampableTrait;
 }
