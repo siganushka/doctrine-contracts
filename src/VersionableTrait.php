@@ -11,7 +11,7 @@ trait VersionableTrait
 {
     #[ORM\Column(type: Types::INTEGER)]
     #[ORM\Version]
-    private ?int $version = null;
+    protected ?int $version = null;
 
     public function getVersion(): ?int
     {

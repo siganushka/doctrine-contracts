@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
 trait SortableTrait
 {
     #[ORM\Column(type: Types::INTEGER)]
-    private int $sort = 0;
+    protected int $sort = 0;
 
     public function getSort(): int
     {
