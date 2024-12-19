@@ -17,6 +17,9 @@ class SortableTest extends TestCase
 
         $entity->setSort(128);
         static::assertSame(128, $entity->getSort());
+
+        $entity->setSort(null);
+        static::assertNull($entity->getSort());
     }
 }
 
