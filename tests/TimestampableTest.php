@@ -17,10 +17,10 @@ class TimestampableTest extends TestCase
         static::assertNull($entity->getCreatedAt());
 
         $entity->setUpdatedAt(new \DateTime());
-        static::assertInstanceOf(\DateTimeInterface::class, $entity->getUpdatedAt());
+        static::assertInstanceOf(\DateTime::class, $entity->getUpdatedAt());
 
         $entity->setCreatedAt(new \DateTimeImmutable());
-        static::assertInstanceOf(\DateTimeInterface::class, $entity->getCreatedAt());
+        static::assertInstanceOf(\DateTimeImmutable::class, $entity->getCreatedAt());
     }
 }
 
