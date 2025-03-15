@@ -10,7 +10,7 @@ $ composer require siganushka/doctrine-contracts
 
 ### Interfaces & Traits
 
-```php
+```
 Siganushka\Contracts\Doctrine\ResourceInterface
 Siganushka\Contracts\Doctrine\ResourceTrait
 
