@@ -19,6 +19,16 @@ class EnableTest extends TestCase
         $entity->setEnabled(false);
         static::assertFalse($entity->isEnabled());
     }
+
+    public function testMethods(): void
+    {
+        $entity = new FooEnable();
+        static::assertSame([
+            'isEnabled',
+            'getEnabled',
+            'setEnabled',
+        ], get_class_methods($entity));
+    }
 }
 
 class FooEnable implements EnableInterface

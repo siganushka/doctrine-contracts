@@ -21,6 +21,15 @@ class SortableTest extends TestCase
         $entity->setSort(null);
         static::assertNull($entity->getSort());
     }
+
+    public function testMethods(): void
+    {
+        $entity = new FooSortable();
+        static::assertSame([
+            'getSort',
+            'setSort',
+        ], get_class_methods($entity));
+    }
 }
 
 class FooSortable implements SortableInterface

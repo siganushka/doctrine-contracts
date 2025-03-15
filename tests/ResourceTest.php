@@ -15,6 +15,14 @@ class ResourceTest extends TestCase
         $entity = new FooResource();
         static::assertNull($entity->getId());
     }
+
+    public function testMethods(): void
+    {
+        $entity = new FooResource();
+        static::assertSame([
+            'getId',
+        ], get_class_methods($entity));
+    }
 }
 
 class FooResource implements ResourceInterface

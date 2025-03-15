@@ -16,6 +16,15 @@ class VersionableTest extends TestCase
         static::assertNull($entity->getVersion());
     }
 
+    public function testMethods(): void
+    {
+        $entity = new FooVersionable();
+        static::assertSame([
+            'getVersion',
+            'setVersion',
+        ], get_class_methods($entity));
+    }
+
     public function testBadMethodCallException(): void
     {
         $this->expectException(\BadMethodCallException::class);
