@@ -22,6 +22,17 @@ class TimestampableTest extends TestCase
         $entity->setCreatedAt(new \DateTimeImmutable());
         static::assertInstanceOf(\DateTimeImmutable::class, $entity->getCreatedAt());
     }
+
+    public function testMethods(): void
+    {
+        $entity = new FooTimestampable();
+        static::assertSame([
+            'getUpdatedAt',
+            'setUpdatedAt',
+            'getCreatedAt',
+            'setCreatedAt',
+        ], get_class_methods($entity));
+    }
 }
 
 class FooTimestampable implements TimestampableInterface
