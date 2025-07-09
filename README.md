@@ -20,11 +20,14 @@ Siganushka\Contracts\Doctrine\EnableTrait
 Siganushka\Contracts\Doctrine\SortableInterface
 Siganushka\Contracts\Doctrine\SortableTrait
 
+Siganushka\Contracts\Doctrine\TimestampableInterface
+Siganushka\Contracts\Doctrine\TimestampableTrait
+
 Siganushka\Contracts\Doctrine\CreatableInterface
 Siganushka\Contracts\Doctrine\CreatableTrait
 
-Siganushka\Contracts\Doctrine\TimestampableInterface
-Siganushka\Contracts\Doctrine\TimestampableTrait
+Siganushka\Contracts\Doctrine\DeletableInterface
+Siganushka\Contracts\Doctrine\DeletableTrait
 
 Siganushka\Contracts\Doctrine\VersionableInterface
 Siganushka\Contracts\Doctrine\VersionableTrait
