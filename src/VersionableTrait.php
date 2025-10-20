@@ -20,6 +20,8 @@ trait VersionableTrait
 
     public function setVersion(?int $version): static
     {
-        throw new \BadMethodCallException('The version cannot be set manually.');
+        $this->version = $version;
+
+        return $this;
     }
 }

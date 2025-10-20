@@ -24,15 +24,6 @@ class VersionableTest extends TestCase
             'setVersion',
         ], get_class_methods($entity));
     }
-
-    public function testBadMethodCallException(): void
-    {
-        $this->expectException(\BadMethodCallException::class);
-        $this->expectExceptionMessage('The version cannot be set manually');
-
-        $entity = new FooVersionable();
-        $entity->setVersion(128);
-    }
 }
 
 class FooVersionable implements VersionableInterface
