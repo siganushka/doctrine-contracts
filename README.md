@@ -26,6 +26,9 @@ Siganushka\Contracts\Doctrine\TimestampableTrait
 Siganushka\Contracts\Doctrine\CreatableInterface
 Siganushka\Contracts\Doctrine\CreatableTrait
 
+Siganushka\Contracts\Doctrine\UpdatableInterface
+Siganushka\Contracts\Doctrine\UpdatableTrait
+
 Siganushka\Contracts\Doctrine\DeletableInterface
 Siganushka\Contracts\Doctrine\DeletableTrait
 

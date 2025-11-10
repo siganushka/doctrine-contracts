@@ -4,9 +4,6 @@ declare(strict_types=1);
 
 namespace Siganushka\Contracts\Doctrine;
 
-interface TimestampableInterface extends CreatableInterface
+interface TimestampableInterface extends CreatableInterface, UpdatableInterface
 {
-    public function getUpdatedAt(): ?\DateTimeInterface;
-
-    public function setUpdatedAt(?\DateTimeInterface $updatedAt): static;
 }

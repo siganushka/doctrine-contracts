@@ -4,12 +4,11 @@ declare(strict_types=1);
 
 namespace Siganushka\Contracts\Doctrine;
 
-use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 trait CreatableTrait
 {
-    #[ORM\Column(type: Types::DATETIME_IMMUTABLE)]
+    #[ORM\Column]
     protected ?\DateTimeImmutable $createdAt = null;
 
     public function getCreatedAt(): ?\DateTimeImmutable
@@ -17,7 +16,7 @@ trait CreatableTrait
         return $this->createdAt;
     }
 
-    public function setCreatedAt(?\DateTimeImmutable $createdAt): static
+    public function setCreatedAt(\DateTimeImmutable $createdAt): static
     {
         $this->createdAt = $createdAt;
 

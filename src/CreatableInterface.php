@@ -8,5 +8,5 @@ interface CreatableInterface
 {
     public function getCreatedAt(): ?\DateTimeImmutable;
 
-    public function setCreatedAt(?\DateTimeImmutable $createdAt): static;
+    public function setCreatedAt(\DateTimeImmutable $createdAt): static;
 }

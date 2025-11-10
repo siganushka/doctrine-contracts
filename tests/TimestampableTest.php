@@ -13,24 +13,24 @@ class TimestampableTest extends TestCase
     public function testAll(): void
     {
         $entity = new FooTimestampable();
-        static::assertNull($entity->getUpdatedAt());
         static::assertNull($entity->getCreatedAt());
-
-        $entity->setUpdatedAt(new \DateTime());
-        static::assertInstanceOf(\DateTime::class, $entity->getUpdatedAt());
+        static::assertNull($entity->getUpdatedAt());
 
         $entity->setCreatedAt(new \DateTimeImmutable());
         static::assertInstanceOf(\DateTimeImmutable::class, $entity->getCreatedAt());
+
+        $entity->setUpdatedAt(new \DateTimeImmutable());
+        static::assertInstanceOf(\DateTimeImmutable::class, $entity->getUpdatedAt());
     }
 
     public function testMethods(): void
     {
         $entity = new FooTimestampable();
         static::assertSame([
-            'getUpdatedAt',
-            'setUpdatedAt',
             'getCreatedAt',
             'setCreatedAt',
+            'getUpdatedAt',
+            'setUpdatedAt',
         ], get_class_methods($entity));
     }
 }
