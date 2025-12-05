@@ -22,4 +22,4 @@ jobs:
             - { name: Install dependencies, run: composer install }
             - { name: Install tools,        run: composer install -d tools/ }
             - { name: Run tests,            run: tools/vendor/bin/simple-phpunit --debug -vvv }
-            - { name: Run phpstan,          run: tools/vendor/bin/phpstan analyse --debug -vvv }
+            - { name: Run phpstan,          run: tools/vendor/bin/phpstan --debug -vvv }
