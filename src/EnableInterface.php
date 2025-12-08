@@ -8,7 +8,5 @@ interface EnableInterface
 {
     public function isEnabled(): bool;
 
-    public function getEnabled(): bool;
-
     public function setEnabled(bool $enabled): static;
 }
