@@ -7,6 +7,7 @@
          failOnRisky="true"
          failOnWarning="true"
          failOnDeprecation="true"
+         failOnPhpunitDeprecation="true"
          beStrictAboutCoverageMetadata="true"
 >
   <php>
