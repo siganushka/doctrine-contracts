@@ -8,8 +8,23 @@ use Doctrine\ORM\Mapping as ORM;
 
 trait DeletableTrait
 {
+    #[ORM\Column]
+    protected int $deleted = 0;
+
     #[ORM\Column(nullable: true)]
     protected ?\DateTimeImmutable $deletedAt = null;
+
+    public function getDeleted(): int
+    {
+        return $this->deleted;
+    }
+
+    public function setDeleted(int $deleted): static
+    {
+        $this->deleted = $deleted;
+
+        return $this;
+    }
 
     public function getDeletedAt(): ?\DateTimeImmutable
     {

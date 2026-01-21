@@ -13,16 +13,18 @@ class DeletableTest extends TestCase
     public function testAll(): void
     {
         $entity = new FooDeletable();
-        static::assertNull($entity->getDeletedAt());
+        static::assertSame(0, $entity->getDeleted());
 
-        $entity->setDeletedAt(new \DateTimeImmutable());
-        static::assertInstanceOf(\DateTimeImmutable::class, $entity->getDeletedAt());
+        $entity->setDeleted(255);
+        static::assertSame(255, $entity->getDeleted());
     }
 
     public function testMethods(): void
     {
         $entity = new FooDeletable();
         static::assertSame([
+            'getDeleted',
+            'setDeleted',
             'getDeletedAt',
             'setDeletedAt',
         ], get_class_methods($entity));
