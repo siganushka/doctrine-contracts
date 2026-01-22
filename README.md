@@ -23,9 +23,6 @@ Siganushka\Contracts\Doctrine\VersionableTrait
 Siganushka\Contracts\Doctrine\EnableInterface
 Siganushka\Contracts\Doctrine\EnableTrait
 
-Siganushka\Contracts\Doctrine\DeletableInterface
-Siganushka\Contracts\Doctrine\DeletableTrait
-
 Siganushka\Contracts\Doctrine\CreatableInterface
 Siganushka\Contracts\Doctrine\CreatableTrait
 
@@ -34,6 +31,9 @@ Siganushka\Contracts\Doctrine\UpdatableTrait
 
 Siganushka\Contracts\Doctrine\TimestampableInterface
 Siganushka\Contracts\Doctrine\TimestampableTrait
+
+Siganushka\Contracts\Doctrine\DeletableInterface
+Siganushka\Contracts\Doctrine\DeletableTrait
 ```
 
 ### Tests
