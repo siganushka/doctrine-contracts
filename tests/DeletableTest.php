@@ -25,8 +25,6 @@ class DeletableTest extends TestCase
         static::assertSame([
             'getDeleted',
             'setDeleted',
-            'getDeletedAt',
-            'setDeletedAt',
         ], get_class_methods($entity));
     }
 }

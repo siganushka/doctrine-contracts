@@ -11,9 +11,6 @@ trait DeletableTrait
     #[ORM\Column]
     protected int $deleted = 0;
 
-    #[ORM\Column(nullable: true)]
-    protected ?\DateTimeImmutable $deletedAt = null;
-
     public function getDeleted(): int
     {
         return $this->deleted;
@@ -22,18 +19,6 @@ trait DeletableTrait
     public function setDeleted(int $deleted): static
     {
         $this->deleted = $deleted;
-
-        return $this;
-    }
-
-    public function getDeletedAt(): ?\DateTimeImmutable
-    {
-        return $this->deletedAt;
-    }
-
-    public function setDeletedAt(?\DateTimeImmutable $deletedAt): static
-    {
-        $this->deletedAt = $deletedAt;
 
         return $this;
     }
