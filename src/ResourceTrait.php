@@ -10,7 +10,7 @@ trait ResourceTrait
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
-    #[ORM\Column(options: ['unsigned' => true])]
+    #[ORM\Column]
     protected ?int $id = null;
 
     public function getId(): ?int
