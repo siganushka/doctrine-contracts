@@ -11,11 +11,6 @@ trait ExpirableTrait
     #[ORM\Column(nullable: true)]
     protected ?\DateTimeImmutable $expiredAt = null;
 
-    public function isExpired(): bool
-    {
-        return $this->expiredAt && new \DateTime() > $this->expiredAt;
-    }
-
     public function getExpiredAt(): ?\DateTimeImmutable
     {
         return $this->expiredAt;
