@@ -23,6 +23,9 @@ Siganushka\Contracts\Doctrine\VersionableTrait
 Siganushka\Contracts\Doctrine\EnableInterface
 Siganushka\Contracts\Doctrine\EnableTrait
 
+Siganushka\Contracts\Doctrine\ExpirableInterface
+Siganushka\Contracts\Doctrine\ExpirableTrait
+
 Siganushka\Contracts\Doctrine\CreatableInterface
 Siganushka\Contracts\Doctrine\CreatableTrait
 
