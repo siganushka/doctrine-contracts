@@ -6,6 +6,9 @@ namespace Siganushka\Contracts\Doctrine;
 
 use Doctrine\ORM\Mapping as ORM;
 
+/**
+ * @deprecated since siganushka/doctrine-contracts 2.0, define directly within the entity.
+ */
 trait ResourceTrait
 {
     #[ORM\Id]

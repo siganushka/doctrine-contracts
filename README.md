@@ -11,9 +11,6 @@ $ composer require siganushka/doctrine-contracts
 ### Interfaces & Traits
 
 ```
-Siganushka\Contracts\Doctrine\ResourceInterface
-Siganushka\Contracts\Doctrine\ResourceTrait
-
 Siganushka\Contracts\Doctrine\SortableInterface
 Siganushka\Contracts\Doctrine\SortableTrait
 
