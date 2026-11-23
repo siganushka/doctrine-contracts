@@ -15,7 +15,7 @@ class EnableTest extends TestCase
         $entity = new FooEnable();
         static::assertTrue($entity->isEnabled());
 
-        $entity->setEnabled(false);
+        static::assertSame($entity, $entity->setEnabled(false));
         static::assertFalse($entity->isEnabled());
     }
 

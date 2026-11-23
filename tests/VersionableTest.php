@@ -14,6 +14,12 @@ class VersionableTest extends TestCase
     {
         $entity = new FooVersionable();
         static::assertNull($entity->getVersion());
+
+        static::assertSame($entity, $entity->setVersion(1));
+        static::assertSame(1, $entity->getVersion());
+
+        static::assertSame($entity, $entity->setVersion(null));
+        static::assertNull($entity->getVersion());
     }
 
     public function testMethods(): void

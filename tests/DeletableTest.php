@@ -15,7 +15,7 @@ class DeletableTest extends TestCase
         $entity = new FooDeletable();
         static::assertSame(0, $entity->getDeleted());
 
-        $entity->setDeleted(255);
+        static::assertSame($entity, $entity->setDeleted(255));
         static::assertSame(255, $entity->getDeleted());
     }
 

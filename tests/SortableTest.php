@@ -15,10 +15,10 @@ class SortableTest extends TestCase
         $entity = new FooSortable();
         static::assertSame(0, $entity->getSort());
 
-        $entity->setSort(128);
+        static::assertSame($entity, $entity->setSort(128));
         static::assertSame(128, $entity->getSort());
 
-        $entity->setSort(null);
+        static::assertSame($entity, $entity->setSort(null));
         static::assertNull($entity->getSort());
     }
 

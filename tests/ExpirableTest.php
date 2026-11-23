@@ -16,8 +16,9 @@ class ExpirableTest extends TestCase
         static::assertNull($entity->getExpiredAt());
 
         $now = new \DateTimeImmutable();
+        $expiredAt = $now->modify('+1 hours');
 
-        $entity->setExpiredAt($expiredAt = $now->modify('+1 hours'));
+        static::assertSame($entity, $entity->setExpiredAt($expiredAt));
         static::assertSame($expiredAt, $entity->getExpiredAt());
 
         $entity->setExpiredAt($expiredAt = $now->modify('-1 seconds'));

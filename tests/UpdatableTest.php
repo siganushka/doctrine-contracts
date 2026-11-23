@@ -15,8 +15,10 @@ class UpdatableTest extends TestCase
         $entity = new FooUpdatable();
         static::assertNull($entity->getUpdatedAt());
 
-        $entity->setUpdatedAt(new \DateTimeImmutable());
-        static::assertInstanceOf(\DateTimeImmutable::class, $entity->getUpdatedAt());
+        $updatedAt = new \DateTimeImmutable();
+
+        static::assertSame($entity, $entity->setUpdatedAt($updatedAt));
+        static::assertSame($updatedAt, $entity->getUpdatedAt());
     }
 
     public function testMethods(): void

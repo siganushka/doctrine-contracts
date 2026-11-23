@@ -15,8 +15,10 @@ class CreatableTest extends TestCase
         $entity = new FooCreatable();
         static::assertNull($entity->getCreatedAt());
 
-        $entity->setCreatedAt(new \DateTimeImmutable());
-        static::assertInstanceOf(\DateTimeImmutable::class, $entity->getCreatedAt());
+        $createdAt = new \DateTimeImmutable();
+
+        static::assertSame($entity, $entity->setCreatedAt($createdAt));
+        static::assertSame($createdAt, $entity->getCreatedAt());
     }
 
     public function testMethods(): void

@@ -16,11 +16,14 @@ class TimestampableTest extends TestCase
         static::assertNull($entity->getCreatedAt());
         static::assertNull($entity->getUpdatedAt());
 
-        $entity->setCreatedAt(new \DateTimeImmutable());
-        static::assertInstanceOf(\DateTimeImmutable::class, $entity->getCreatedAt());
+        $createdAt = new \DateTimeImmutable();
+        $updatedAt = new \DateTimeImmutable();
 
-        $entity->setUpdatedAt(new \DateTimeImmutable());
-        static::assertInstanceOf(\DateTimeImmutable::class, $entity->getUpdatedAt());
+        static::assertSame($entity, $entity->setCreatedAt($createdAt));
+        static::assertSame($createdAt, $entity->getCreatedAt());
+
+        static::assertSame($entity, $entity->setUpdatedAt($updatedAt));
+        static::assertSame($updatedAt, $entity->getUpdatedAt());
     }
 
     public function testMethods(): void
